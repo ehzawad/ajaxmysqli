@@ -1,0 +1,39 @@
+<html>
+
+<code>
+<?php
+
+
+$conn=mysql_connect("DB_HOST","USER_NAME","PASS") or die("can't connect");
+
+@mysql_select_db("DB_NAME",$conn);
+
+$result=mysql_query("SELECT * FROM book");
+
+$dis_string="<br>";
+
+while($res=mysql_fetch_array($result)) { 		
+
+		$dis_string.=$res['id'].".\t".$res['title'];
+
+		$dis_string.="<br>";
+
+		
+
+	}
+
+//sleep(5);
+
+echo "<center><h1>Ajax Results/response from an XMLHTTP request</h1></center>";
+
+//echo "this is an ajax example<br />";
+
+echo $dis_string;
+
+echo "<center><img src='ajax.jpg'/></center>";
+
+
+
+?>
+</code>
+</html>
